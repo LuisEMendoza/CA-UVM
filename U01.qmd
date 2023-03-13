@@ -4,9 +4,9 @@ format: html
 editor: visual
 ---
 
-## Introducción a la Ingeniería de Control {#quarto}
+## Introducción a la Ingeniería de Control {#sec-introducción-a-la-ingeniería-de-control}
 
-### Definiciones {#running-code}
+### Definiciones {#sec-definiciones}
 
 **Variable controlada.** Cantidad o condición que se mide y controla, básicamente es la salida del sistema.
 
@@ -23,3 +23,79 @@ editor: visual
 **Perturbaciones.** Señal que tiende a afectar negativamente el valor de la salida de un sistema. Puede ser interna o externa, siendo una entrada más en el primer caso.
 
 **Control realimentado.** Operación que con perturbaciones tiende a reducir la diferencia entre la salida del sistema y alguna entrada de referencia y lo realiza siempre tomando en cuenta esta diferencia. Se aplica a perturbaciones impredecibles ya que las conocidas siempre pueden compensarse.
+
+### Sistema de Control Robusto {#sistema-de-control-robusto}
+
+Podemos definir la planta real como $\tilde{G}(s)$, mientras que al modelo matemático que la representa como $G(s)$. La planta real contiene incertidumbre, la cual se denota por $\Delta(s)$.
+
+Tanto la planta real como la nominal pueden estar relacionadas por un factor multiplicativo
+
+$$
+\tilde{G}(s)=G(s)[1+\Delta(s)]
+$$
+
+o por un factor aditivo
+
+$$
+\tilde{G}(s)=G(s)+\Delta(s)
+$$
+
+Al no conocer exactamente el error $\Delta(s)$ se emplea su estimación $W(s)$, la cual es una función de transferencia escalar tipo
+
+$$
+\|\Delta(s)\|_\infty < \|W(s)\|_\infty = max_{0\leq \omega \leq \infty}|W(j\omega)|
+$$
+
+donde $\|W(s)\|_\infty$ es el máximo valor de $|W(j\omega)|$ para $0\leq\omega\leq\infty$ y se denomina *norma H infinito* de $W(s)$.
+
+Utilizando el teorema de la pequeña ganancia, el proceso de diseño conlleva la determinación del controlador $K(s)$ que satisface
+
+$$
+\left \|\frac{W(s)}{1+K(s)G(s)}\right \|_\infty <1
+$$
+
+siendo $G(s)$ la función de transferencia del modelo, $K(s)$ es la función de transferencia del controlador y $W(s)$ se escoge como función de transferencia que aproxima $\Delta(s)$. En muchos casos se satisfacen más de una desigualdad dependiente de $G(s)$, $K(s)$ y $W(s)$.
+
+Para garantizar la estabilidad robusta y el comportamiento robusto se requiere satisfacer:
+
+$$
+\left \|\frac{W_m(s)K(s)G(s)}{1+K(s)G(s)}\right \|_\infty <1
+$$
+
+para estabilidad robusta y
+
+$$
+\left \|\frac{W_s(s)}{1+K(s)G(s)}\right \|_\infty <1
+$$
+
+para comportamiento robusto.
+
+**Estabilidad robusta.** El controlador $K(s)$ garantiza la estabilidad interna de todos los sistemas que conforman la representación de la planta real.
+
+**Comportamiento robusto.** Comportamiento especificado satisfecho para los sistemas que conforman la planta real representada.
+
+### Modelado matemático de Sistemas de Control {#modelado-matemático-de-sistemas-de-control}
+
+#### Funciones de transferencia {#funciones-de-transferencia}
+
+Para un sistema descrito mediante una ecuación diferencial lineal e invariante en el tiempo, se define como el cociente entre la transformada de Laplace de la salida (función de respuesta) y la transformada de Laplace de la entrada (función de excitación), suponiendo que todas las condiciones iniciales son $0$.
+
+$$G(s)=\left. \frac{L(salida)}{L(entrada)} \right |_0 = \frac{Y(s)}{X(s)}$$
+
+Por lo tanto:
+
+$$
+Y(s)=G(s)X(s)
+$$
+
+y
+
+$$
+y(t)=\int_0^t{x(\tau)g(t-\tau)d\tau}=\int_0^t{g(\tau)x(t-\tau)d\tau}
+$$
+
+donde
+
+$$
+g(t), \ x(\tau) =0; \ t<0
+$$

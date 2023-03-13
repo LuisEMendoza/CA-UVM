@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -112,10 +113,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Introducción a la Ingeniería de Control</h2>
-<section id="running-code" class="level3">
-<h3 class="anchored" data-anchor-id="running-code">Definiciones</h3>
+<section id="sec-introducción-a-la-ingeniería-de-control" class="level2">
+<h2 class="anchored" data-anchor-id="sec-introducción-a-la-ingeniería-de-control">Introducción a la Ingeniería de Control</h2>
+<section id="sec-definiciones" class="level3">
+<h3 class="anchored" data-anchor-id="sec-definiciones">Definiciones</h3>
 <p><strong>Variable controlada.</strong> Cantidad o condición que se mide y controla, básicamente es la salida del sistema.</p>
 <p><strong>Señal de control.</strong> También llamada <em>variable manipulada</em>. Es la cantidad o condición que el controlador modifica para afectar el valor de la variable controlada.</p>
 <p><strong>Controlar.</strong> Significa medir el valor de la variable controlada del sistema y aplicar la variable manipulada al sistema para corregir o limitar la desviación del valor medido respecto del valor deseado.</p>
@@ -124,8 +125,61 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Sistemas.</strong> Combinación de componentes que actúan juntos con un objetivo predeterminado.</p>
 <p><strong>Perturbaciones.</strong> Señal que tiende a afectar negativamente el valor de la salida de un sistema. Puede ser interna o externa, siendo una entrada más en el primer caso.</p>
 <p><strong>Control realimentado.</strong> Operación que con perturbaciones tiende a reducir la diferencia entre la salida del sistema y alguna entrada de referencia y lo realiza siempre tomando en cuenta esta diferencia. Se aplica a perturbaciones impredecibles ya que las conocidas siempre pueden compensarse.</p>
+</section>
+<section id="sistema-de-control-robusto" class="level3">
+<h3 class="anchored" data-anchor-id="sistema-de-control-robusto">Sistema de Control Robusto</h3>
+<p>Podemos definir la planta real como <span class="math inline">\(\tilde{G}(s)\)</span>, mientras que al modelo matemático que la representa como <span class="math inline">\(G(s)\)</span>. La planta real contiene incertidumbre, la cual se denota por <span class="math inline">\(\Delta(s)\)</span>.</p>
+<p>Tanto la planta real como la nominal pueden estar relacionadas por un factor multiplicativo</p>
+<p><span class="math display">\[
+\tilde{G}(s)=G(s)[1+\Delta(s)]
+\]</span></p>
+<p>o por un factor aditivo</p>
+<p><span class="math display">\[
+\tilde{G}(s)=G(s)+\Delta(s)
+\]</span></p>
+<p>Al no conocer exactamente el error <span class="math inline">\(\Delta(s)\)</span> se emplea su estimación <span class="math inline">\(W(s)\)</span>, la cual es una función de transferencia escalar tipo</p>
+<p><span class="math display">\[
+\|\Delta(s)\|_\infty &lt; \|W(s)\|_\infty = max_{0\leq \omega \leq \infty}|W(j\omega)|
+\]</span></p>
+<p>donde <span class="math inline">\(\|W(s)\|_\infty\)</span> es el máximo valor de <span class="math inline">\(|W(j\omega)|\)</span> para <span class="math inline">\(0\leq\omega\leq\infty\)</span> y se denomina <em>norma H infinito</em> de <span class="math inline">\(W(s)\)</span>.</p>
+<p>Utilizando el teorema de la pequeña ganancia, el proceso de diseño conlleva la determinación del controlador <span class="math inline">\(K(s)\)</span> que satisface</p>
+<p><span class="math display">\[
+\left \|\frac{W(s)}{1+K(s)G(s)}\right \|_\infty &lt;1
+\]</span></p>
+<p>siendo <span class="math inline">\(G(s)\)</span> la función de transferencia del modelo, <span class="math inline">\(K(s)\)</span> es la función de transferencia del controlador y <span class="math inline">\(W(s)\)</span> se escoge como función de transferencia que aproxima <span class="math inline">\(\Delta(s)\)</span>. En muchos casos se satisfacen más de una desigualdad dependiente de <span class="math inline">\(G(s)\)</span>, <span class="math inline">\(K(s)\)</span> y <span class="math inline">\(W(s)\)</span>.</p>
+<p>Para garantizar la estabilidad robusta y el comportamiento robusto se requiere satisfacer:</p>
+<p><span class="math display">\[
+\left \|\frac{W_m(s)K(s)G(s)}{1+K(s)G(s)}\right \|_\infty &lt;1
+\]</span></p>
+<p>para estabilidad robusta y</p>
+<p><span class="math display">\[
+\left \|\frac{W_s(s)}{1+K(s)G(s)}\right \|_\infty &lt;1
+\]</span></p>
+<p>para comportamiento robusto.</p>
+<p><strong>Estabilidad robusta.</strong> El controlador <span class="math inline">\(K(s)\)</span> garantiza la estabilidad interna de todos los sistemas que conforman la representación de la planta real.</p>
+<p><strong>Comportamiento robusto.</strong> Comportamiento especificado satisfecho para los sistemas que conforman la planta real representada.</p>
+</section>
+<section id="modelado-matemático-de-sistemas-de-control" class="level3">
+<h3 class="anchored" data-anchor-id="modelado-matemático-de-sistemas-de-control">Modelado matemático de Sistemas de Control</h3>
+<section id="funciones-de-transferencia" class="level4">
+<h4 class="anchored" data-anchor-id="funciones-de-transferencia">Funciones de transferencia</h4>
+<p>Para un sistema descrito mediante una ecuación diferencial lineal e invariante en el tiempo, se define como el cociente entre la transformada de Laplace de la salida (función de respuesta) y la transformada de Laplace de la entrada (función de excitación), suponiendo que todas las condiciones iniciales son <span class="math inline">\(0\)</span>.</p>
+<p><span class="math display">\[G(s)=\left. \frac{L(salida)}{L(entrada)} \right |_0 = \frac{Y(s)}{X(s)}\]</span></p>
+<p>Por lo tanto:</p>
+<p><span class="math display">\[
+Y(s)=G(s)X(s)
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+y(t)=\int_0^t{x(\tau)g(t-\tau)d\tau}=\int_0^t{g(\tau)x(t-\tau)d\tau}
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+g(t), \ x(\tau) =0; \ t&lt;0
+\]</span></p>
 
 
+</section>
 </section>
 </section>
 
