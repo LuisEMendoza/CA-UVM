@@ -119,3 +119,5 @@ $$
 **Lazo cerrado**. La salida $C(s)$ se realimenta al punto de suma, donde se compara con la entrada de referencia $R(s)$. La salida del bloque $C(s)$ se obtiene multiplicando la función de transferencia $G(s)$ por la entrada al bloque $E(s)$.
 
 ![](Media/LazoCerrado.png){fig-align="center"}
+
+La función de transferencia para un lazo cerrado es
