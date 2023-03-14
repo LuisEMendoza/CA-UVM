@@ -177,6 +177,36 @@ y(t)=\int_0^t{x(\tau)g(t-\tau)d\tau}=\int_0^t{g(\tau)x(t-\tau)d\tau}
 <p><span class="math display">\[
 g(t), \ x(\tau) =0; \ t&lt;0
 \]</span></p>
+</section>
+</section>
+<section id="diagramas-de-bloques" class="level3">
+<h3 class="anchored" data-anchor-id="diagramas-de-bloques">Diagramas de bloques</h3>
+<section id="elementos-básicos" class="level4">
+<h4 class="anchored" data-anchor-id="elementos-básicos">Elementos básicos</h4>
+<p><strong>Punto de suma</strong>. Indica suma o resta de señales, siendo <span class="math inline">\(R_1(s)\)</span> la señal de referencia y <span class="math inline">\(R_2(s)\)</span> la señal que se suma (o en dado caso, puede restarse).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/PuntoDeSuma.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><strong>Punto de toma o derivación</strong>. Se emplea para indicar que alguna señal sale a diferentes lugares.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/PuntoDeToma.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><strong>Bloque</strong>. Elemento básico que representa la función de transferencia. Tiene un efecto multiplicativo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/Bloque.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><strong>Lazo cerrado</strong>. La salida <span class="math inline">\(C(s)\)</span> se realimenta al punto de suma, donde se compara con la entrada de referencia <span class="math inline">\(R(s)\)</span>. La salida del bloque <span class="math inline">\(C(s)\)</span> se obtiene multiplicando la función de transferencia <span class="math inline">\(G(s)\)</span> por la entrada al bloque <span class="math inline">\(E(s)\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/LazoCerrado.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 
 
 </section>

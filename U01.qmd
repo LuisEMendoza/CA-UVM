@@ -99,3 +99,23 @@ donde
 $$
 g(t), \ x(\tau) =0; \ t<0
 $$
+
+### Diagramas de bloques {#diagramas-de-bloques}
+
+#### Elementos básicos {#elementos-básicos}
+
+**Punto de suma**. Indica suma o resta de señales, siendo $R_1(s)$ la señal de referencia y $R_2(s)$ la señal que se suma (o en dado caso, puede restarse).
+
+![](Media/PuntoDeSuma.png){fig-align="center"}
+
+**Punto de toma o derivación**. Se emplea para indicar que alguna señal sale a diferentes lugares.
+
+![](Media/PuntoDeToma.png){fig-align="center"}
+
+**Bloque**. Elemento básico que representa la función de transferencia. Tiene un efecto multiplicativo.
+
+![](Media/Bloque.png){fig-align="center"}
+
+**Lazo cerrado**. La salida $C(s)$ se realimenta al punto de suma, donde se compara con la entrada de referencia $R(s)$. La salida del bloque $C(s)$ se obtiene multiplicando la función de transferencia $G(s)$ por la entrada al bloque $E(s)$.
+
+![](Media/LazoCerrado.png){fig-align="center"}
