@@ -354,6 +354,22 @@ FT_{cascada}=\frac{50}{s^3+7s^2+20s+50}
 <p><span class="math display">\[
 FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50}
 \]</span></p>
+<p>Mientras que para determinar la función de transferencia con lazo cerrado usaremos</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">/</span>. s2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Obteniendo:</p>
+<p><span class="math display">\[
+FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
+\]</span></p>
+</section>
+<section id="julia" class="level4">
+<h4 class="anchored" data-anchor-id="julia">Julia</h4>
+<p>Para poder utilizar Julia debemos instalar la extensión diseñada para Sistemas de Control, esto lo realizamos con el siguiente comando</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg; Pkg</span>.<span class="fu">add</span>(<span class="st">"ControlSystems"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El proceso es algo lento, ya que se deben precompilar los paquetes a instalar. Después de esto, debemos cargar dichos paquetes</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ControlSystems</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Cuando la carga esté lista, veremos el cursor. Esto nos indica que es posible trabajar con el entorno. Declararemos nuestras funciones escribiendo cada una y dando <em>Enter</em></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>G1 <span class="op">=</span> <span class="fu">tf</span>([<span class="fl">10</span>],[<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>G2 <span class="op">=</span> <span class="fu">tf</span>([<span class="fl">5</span>],[<span class="fl">1</span>,<span class="fl">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

@@ -241,3 +241,39 @@ Dando como resultado:
 $$
 FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50}
 $$
+
+Mientras que para determinar la función de transferencia con lazo cerrado usaremos
+
+``` octave
+s1 /. s2
+```
+
+Obteniendo:
+
+$$
+FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
+$$
+
+#### Julia
+
+Para poder utilizar Julia debemos instalar la extensión diseñada para Sistemas de Control, esto lo realizamos con el siguiente comando
+
+``` julia
+using Pkg; Pkg.add("ControlSystems")
+```
+
+El proceso es algo lento, ya que se deben precompilar los paquetes a instalar. Después de esto, debemos cargar dichos paquetes
+
+``` julia
+using ControlSystems
+```
+
+Cuando la carga esté lista, veremos el cursor. Esto nos indica que es posible trabajar con el entorno. Declararemos nuestras funciones escribiendo cada una y dando *Enter*
+
+``` julia
+G1 = tf([10],[1, 2, 10])
+```
+
+``` julia
+G2 = tf([5],[1,5])
+```
