@@ -325,20 +325,20 @@ No debería aparecer error alguno.
 
 Arrancamos el sistema importando la librería instalada
 
-``` python
+```{python}
 import control
 ```
 
 Procedemos a capturar las funciones para obtener sus correspondientes funciones de transferencia:
 
-``` python
+```{python}
 G1 = control.tf([10],[1, 2, 10])
 G2 = control.tf([5],[1, 5])
 ```
 
 Para obtener dichas funciones de transferencia, introducimos lo siguiente para arreglo en serie:
 
-``` python
+```{python}
 ftseries = control.series(G1, G2)
 ftseries
 ```
