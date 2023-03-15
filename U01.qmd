@@ -340,7 +340,7 @@ Para obtener dichas funciones de transferencia, introducimos lo siguiente para a
 
 ```{python}
 ftseries = control.series(G1, G2)
-ftseries
+print(ftseries)
 ```
 
 Para arreglo en paralelo:
