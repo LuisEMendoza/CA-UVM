@@ -370,6 +370,43 @@ FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
 <p>Cuando la carga esté lista, veremos el cursor. Esto nos indica que es posible trabajar con el entorno. Declararemos nuestras funciones escribiendo cada una y dando <em>Enter</em></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>G1 <span class="op">=</span> <span class="fu">tf</span>([<span class="fl">10</span>],[<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>G2 <span class="op">=</span> <span class="fu">tf</span>([<span class="fl">5</span>],[<span class="fl">1</span>,<span class="fl">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para poder calcular las funciones de transferencia, utilizaremos los comandos siguientes. Para la configuración en cascada:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">series</span>(G1, G2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para configuración en paralelo:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">parallel</span>(G1, G2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y por último, lazo cerrado:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">feedback</span>(G1, G2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Estos tres comandos arrojan los resultados mostrados a continuación:</p>
+<p><span class="math display">\[
+FT_{cascada}=\frac{50}{s^3+7s^2+20s+50} \\
+\ \\
+FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50} \\
+\ \\
+FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
+\]</span></p>
+</section>
+<section id="python" class="level4">
+<h4 class="anchored" data-anchor-id="python">Python</h4>
+<p>El trabajo con Python en cuanto a Control de Sistemas es posible, sin embargo requiere cierto tratamiento previo en cuanto a instalación de paquetes. Con el entorno ya instalado, obtenido de la fuente oficial, procedemos a agregar paquetes específicos. En este caso, serán dos:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pip install slycot</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>pip install control</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Es importante que verifiquemos que <em>slycot</em> esté correctamente instalado con</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>c <span class="st">"import slycot"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>No debería aparecer error alguno.</p>
+<p>Arrancamos el sistema importando la librería instalada</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> control</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Procedemos a capturar las funciones para obtener sus correspondientes funciones de transferencia:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>G1 <span class="op">=</span> control.tf([<span class="dv">10</span>],[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">10</span>])</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>G2 <span class="op">=</span> control.tf([<span class="dv">5</span>],[<span class="dv">1</span>, <span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para obtener dichas funciones de transferencia, introducimos lo siguiente para arreglo en serie:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ftseries <span class="op">=</span> control.series(G1, G2)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>ftseries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para arreglo en paralelo:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ftparallel <span class="op">=</span> control.parallel(G1, G2)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>ftparallel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para arreglo en lazo cerrado:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ftfeedback <span class="op">=</span> control.feedback(G1, G2)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>ftfeedback</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

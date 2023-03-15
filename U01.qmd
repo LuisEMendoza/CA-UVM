@@ -277,3 +277,82 @@ G1 = tf([10],[1, 2, 10])
 ``` julia
 G2 = tf([5],[1,5])
 ```
+
+Para poder calcular las funciones de transferencia, utilizaremos los comandos siguientes. Para la configuración en cascada:
+
+``` julia
+series(G1, G2)
+```
+
+Para configuración en paralelo:
+
+``` julia
+parallel(G1, G2)
+```
+
+Y por último, lazo cerrado:
+
+``` julia
+feedback(G1, G2)
+```
+
+Estos tres comandos arrojan los resultados mostrados a continuación:
+
+$$
+FT_{cascada}=\frac{50}{s^3+7s^2+20s+50} \\
+\ \\
+FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50} \\
+\ \\
+FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
+$$
+
+#### Python
+
+El trabajo con Python en cuanto a Control de Sistemas es posible, sin embargo requiere cierto tratamiento previo en cuanto a instalación de paquetes. Con el entorno ya instalado, obtenido de la fuente oficial, procedemos a agregar paquetes específicos. En este caso, serán dos:
+
+``` python
+pip install slycot
+pip install control
+```
+
+Es importante que verifiquemos que *slycot* esté correctamente instalado con
+
+``` python
+python -c "import slycot"
+```
+
+No debería aparecer error alguno.
+
+Arrancamos el sistema importando la librería instalada
+
+``` python
+import control
+```
+
+Procedemos a capturar las funciones para obtener sus correspondientes funciones de transferencia:
+
+``` python
+G1 = control.tf([10],[1, 2, 10])
+G2 = control.tf([5],[1, 5])
+```
+
+Para obtener dichas funciones de transferencia, introducimos lo siguiente para arreglo en serie:
+
+``` python
+ftseries = control.series(G1, G2)
+ftseries
+```
+
+Para arreglo en paralelo:
+
+``` python
+ftparallel = control.parallel(G1, G2)
+ftparallel
+```
+
+Para arreglo en lazo cerrado:
+
+``` python
+ftfeedback = control.feedback(G1, G2)
+ftfeedback
+```
