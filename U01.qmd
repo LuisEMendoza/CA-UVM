@@ -139,7 +139,11 @@ A esto le llamamos la *función de transferencia en lazo cerrado*.
 Tomemos un ejemplo presente en el libro de texto **Ingeniería de Control Moderna** de Ogata. Tenemos dos componentes $G_1(s)$ y $G_2(s)$, los cuales están conectados de tres maneras diferentes: a) en serie, b) paralelo y c) en lazo cerrado, donde
 
 $$
-G_1(s)=\frac{num1}{den1}=\frac{10}{s^2+2s+10}, \ G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
+G_1(s)=\frac{num1}{den1}=\frac{10}{s^2+2s+10}
+$$
+
+$$
+G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
 $$
 
 ![a) Sistema en cascada](Media/SistemaEnSerie.png){fig-align="center"}
