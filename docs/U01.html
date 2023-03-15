@@ -318,7 +318,41 @@ G_1(s)=\frac{num1}{den1}=\frac{10}{s^2+2s+10}, \ G_2(s)=\frac{num2}{den2}=\frac{
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">printsys</span>(<span class="va">num</span><span class="op">,</span><span class="va">den</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>La última instrucción nos debe devolver la respuesta:</p>
 <p><span class="math display">\[
-\frac{50}{s^3+7s^2+20s+50}
+FT_{cascada}=\frac{50}{s^3+7s^2+20s+50}
+\]</span></p>
+<p>Para calcular la funci[on de transferencia en paralelo, utilizamos el comando</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">num</span><span class="op">,</span> <span class="va">den</span>] <span class="op">=</span> <span class="va">parallel</span>(<span class="va">num1</span><span class="op">,</span><span class="va">den1</span><span class="op">,</span><span class="va">num2</span><span class="op">,</span><span class="va">den2</span>)<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">printsys</span>(<span class="va">num</span><span class="op">,</span><span class="va">den</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Cuya respuesta debería ser:</p>
+<p><span class="math display">\[
+FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50}
+\]</span></p>
+<p>Y para finalizar, el sistema en lazo cerrado</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">num</span><span class="op">,</span> <span class="va">den</span>] <span class="op">=</span> <span class="va">feedback</span>(<span class="va">num1</span><span class="op">,</span><span class="va">den1</span><span class="op">,</span><span class="va">num2</span><span class="op">,</span><span class="va">den2</span>)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">printsys</span>(<span class="va">num</span><span class="op">,</span><span class="va">den</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Con la respuesta:</p>
+<p><span class="math display">\[
+FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
+\]</span></p>
+</section>
+<section id="scilab" class="level4">
+<h4 class="anchored" data-anchor-id="scilab">SciLab</h4>
+<p>En SciLab difiere un poco la lógica al momento de definir nuestras funciones, sin embargo parece ser un código más corto. Comenzamos declarando la variable a utilizar <span class="math inline">\(s\)</span>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="fu">poly</span>(<span class="fl">0</span><span class="op">,</span><span class="st">'s'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Enseguida capturamos nuestras funciones, dando <em>Enter</em> tras terminar cada una:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> <span class="fl">10</span> <span class="op">/</span> (s<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="fl">2</span><span class="op">*</span>s <span class="op">+</span> <span class="fl">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> <span class="fl">5</span> <span class="op">/</span> (s <span class="op">+</span> <span class="fl">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La función de transferencia en cascada se calcula mediante</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">*</span> s2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Obteniendo la respuesta:</p>
+<p><span class="math display">\[
+FT_{cascada}=\frac{50}{s^3+7s^2+20s+50}
+\]</span></p>
+<p>Para el arreglo en paralelo se introduce</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">+</span> s2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dando como resultado:</p>
+<p><span class="math display">\[
+FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50}
 \]</span></p>
 
 

@@ -171,5 +171,73 @@ printsys(num,den)
 La última instrucción nos debe devolver la respuesta:
 
 $$
-\frac{50}{s^3+7s^2+20s+50}
+FT_{cascada}=\frac{50}{s^3+7s^2+20s+50}
+$$
+
+Para calcular la funci\[on de transferencia en paralelo, utilizamos el comando
+
+``` matlab
+[num, den] = parallel(num1,den1,num2,den2);
+printsys(num,den)
+```
+
+Cuya respuesta debería ser:
+
+$$
+FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50}
+$$
+
+Y para finalizar, el sistema en lazo cerrado
+
+``` matlab
+[num, den] = feedback(num1,den1,num2,den2);
+printsys(num,den)
+```
+
+Con la respuesta:
+
+$$
+FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
+$$
+
+#### SciLab
+
+En SciLab difiere un poco la lógica al momento de definir nuestras funciones, sin embargo parece ser un código más corto. Comenzamos declarando la variable a utilizar $s$:
+
+``` octave
+s = poly(0,'s')
+```
+
+Enseguida capturamos nuestras funciones, dando *Enter* tras terminar cada una:
+
+``` octave
+s1 = 10 / (s^2 + 2*s + 10)
+```
+
+``` octave
+s2 = 5 / (s + 5)
+```
+
+La función de transferencia en cascada se calcula mediante
+
+``` octave
+s1 * s2
+```
+
+Obteniendo la respuesta:
+
+$$
+FT_{cascada}=\frac{50}{s^3+7s^2+20s+50}
+$$
+
+Para el arreglo en paralelo se introduce
+
+``` octave
+s1 + s2
+```
+
+Dando como resultado:
+
+$$
+FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50}
 $$
