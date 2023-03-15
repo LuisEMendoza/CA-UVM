@@ -134,7 +134,7 @@ $$
 
 A esto le llamamos la *función de transferencia en lazo cerrado*.
 
-### Obtención de funciones de transferencia con lenguajes de programación
+### Obtención de funciones de transferencia con lenguajes de programación {#obtención-de-funciones-de-transferencia-con-lenguajes-de-programación}
 
 Tomemos un ejemplo presente en el libro de texto **Ingeniería de Control Moderna** de Ogata. Tenemos dos componentes $G_1(s)$ y $G_2(s)$, los cuales están conectados de tres maneras diferentes: a) en serie, b) paralelo y c) en lazo cerrado, donde
 
@@ -142,15 +142,9 @@ $$
 G_1(s)=\frac{num1}{den1}=\frac{10}{s^2+2s+10}, \ G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
 $$
 
-![a) Sistema en cascada](Media/SistemaEnSerie.png)
-
-![b) Sistema en paralelo](Media/SistemaEnParalelo.png)
-
-![c) Sistema en lazo cerrado](Media/SistemaRealimentado.png)
-
 Veamos cómo obtener las funciones resultantes de estos arreglos mediante algunos lenguajes de programación.
 
-#### MATLAB
+#### MATLAB {#matlab}
 
 De acuerdo a la bibliografía ya mencionada, en MATLAB podemos cargar nuestras funciones de la siguiente manera:
 
@@ -200,7 +194,7 @@ $$
 FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
 $$
 
-#### SciLab
+#### SciLab {#scilab}
 
 En SciLab difiere un poco la lógica al momento de definir nuestras funciones, sin embargo parece ser un código más corto. Comenzamos declarando la variable a utilizar $s$:
 
@@ -254,7 +248,7 @@ $$
 FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
 $$
 
-#### Julia
+#### Julia {#julia}
 
 Para poder utilizar Julia debemos instalar la extensión diseñada para Sistemas de Control, esto lo realizamos con el siguiente comando
 
