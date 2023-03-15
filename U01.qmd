@@ -300,9 +300,13 @@ Estos tres comandos arrojan los resultados mostrados a continuación:
 
 $$
 FT_{cascada}=\frac{50}{s^3+7s^2+20s+50} \\
-\ \\
+$$
+
+$$
 FT_{paralelo}=\frac{5s^2+20s+100}{s^3+7s^2+20s+50} \\
-\ \\
+$$
+
+$$
 FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
 $$
 
@@ -345,22 +349,14 @@ print(ftseries)
 
 Para arreglo en paralelo:
 
-``` python
+```{python}
 ftparallel = control.parallel(G1, G2)
-ftparallel
+print(ftparallel)
 ```
 
 Para arreglo en lazo cerrado:
 
-``` python
-ftfeedback = control.feedback(G1, G2)
-ftfeedback
-```
-
 ```{python}
-import control
-G1 = control.tf([10],[1, 2, 10])
-G2 = control.tf([5],[1, 5])
-ftseries = control.series(G1, G2)
-ftseries
+ftfeedback = control.feedback(G1, G2)
+print(ftfeedback)
 ```
