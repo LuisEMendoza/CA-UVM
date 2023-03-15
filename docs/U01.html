@@ -320,7 +320,7 @@ G_1(s)=\frac{num1}{den1}=\frac{10}{s^2+2s+10}, \ G_2(s)=\frac{num2}{den2}=\frac{
 <p><span class="math display">\[
 FT_{cascada}=\frac{50}{s^3+7s^2+20s+50}
 \]</span></p>
-<p>Para calcular la funci[on de transferencia en paralelo, utilizamos el comando</p>
+<p>Para calcular la función de transferencia en paralelo, utilizamos el comando</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>[<span class="va">num</span><span class="op">,</span> <span class="va">den</span>] <span class="op">=</span> <span class="va">parallel</span>(<span class="va">num1</span><span class="op">,</span><span class="va">den1</span><span class="op">,</span><span class="va">num2</span><span class="op">,</span><span class="va">den2</span>)<span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">printsys</span>(<span class="va">num</span><span class="op">,</span><span class="va">den</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Cuya respuesta debería ser:</p>

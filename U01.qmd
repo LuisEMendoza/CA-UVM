@@ -174,7 +174,7 @@ $$
 FT_{cascada}=\frac{50}{s^3+7s^2+20s+50}
 $$
 
-Para calcular la funci\[on de transferencia en paralelo, utilizamos el comando
+Para calcular la función de transferencia en paralelo, utilizamos el comando
 
 ``` matlab
 [num, den] = parallel(num1,den1,num2,den2);
