@@ -356,3 +356,11 @@ Para arreglo en lazo cerrado:
 ftfeedback = control.feedback(G1, G2)
 ftfeedback
 ```
+
+```{python}
+import control
+G1 = control.tf([10],[1, 2, 10])
+G2 = control.tf([5],[1, 5])
+ftseries = control.series(G1, G2)
+ftseries
+```
