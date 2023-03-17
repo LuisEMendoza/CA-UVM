@@ -364,3 +364,25 @@ Para arreglo en lazo cerrado:
 ftfeedback = control.feedback(G1, G2)
 print(ftfeedback)
 ```
+
+### Modelado de sistemas mecánicos
+
+#### Resortes
+
+Para resortes en paralelo:
+
+$$
+F=k_1x+k_2x
+$$
+
+Siendo
+
+$$
+k_{eq}=k_1+k_2
+$$
+
+Para resortes conectados en serie, la fuerza es la misma:
+
+$$
+F=k_1y, \ F=k_2(x-y)
+$$
