@@ -450,6 +450,12 @@ s^3 + 7 s^2 + 20 s + 100
 <section id="resortes" class="level4">
 <h4 class="anchored" data-anchor-id="resortes">Resortes</h4>
 <p>Para resortes en paralelo:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/ResortesParalelo.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Resortes en paralelo</figcaption><p></p>
+</figure>
+</div>
 <p><span class="math display">\[
 F=k_1x+k_2x
 \]</span></p>
@@ -458,11 +464,78 @@ F=k_1x+k_2x
 k_{eq}=k_1+k_2
 \]</span></p>
 <p>Para resortes conectados en serie, la fuerza es la misma:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/ResortesSerie.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Resortes en serie</figcaption><p></p>
+</figure>
+</div>
 <p><span class="math display">\[
 F=k_1y, \ F=k_2(x-y)
 \]</span></p>
+</section>
+<section id="sistemas-de-amortiguadores" class="level4">
+<h4 class="anchored" data-anchor-id="sistemas-de-amortiguadores">Sistemas de amortiguadores</h4>
+<p>En estos casos debe obtenerse el coeficiente de fricción viscosa.</p>
+<p>Para amortiguadores en paralelo, sabemos que:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/AmortiguadorParalelo.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Amortiguadores en paralelo</figcaption><p></p>
+</figure>
+</div>
+<p><span class="math display">\[
+F=b_1(y'-x')+b_2(y'-x')
+\]</span></p>
+<p>Esto nos da:</p>
+<p><span class="math display">\[
+F=(b_1+b_2)(y'-x')
+\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[
+b_{eq}=(b_1+b_2)
+\]</span></p>
+<p>Para amortiguadores en serie, se sabe que:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/AmortiguadorSerie.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Amortiguadores en serie</figcaption><p></p>
+</figure>
+</div>
+<p><span class="math display">\[
+F=b_1(z'-x')=b_2(y'-z')
+\]</span></p>
+</section>
+<section id="sistemas-masa-resorte-amortiguador" class="level4">
+<h4 class="anchored" data-anchor-id="sistemas-masa-resorte-amortiguador">Sistemas masa-resorte-amortiguador</h4>
+<section id="ejemplo-1" class="level5">
+<h5 class="anchored" data-anchor-id="ejemplo-1">Ejemplo 1</h5>
+<p>Consideremos el ejercicio propuesto en el libro de Ogata. Ahí se tiene un sistema armado en un carro sin masa. Debemos obtener la función de transferencia del mismo, suponiendo que el carro está inmóvil para todo tiempo menor a cero junto con el sistema completo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/SistemaMasaResorteAmortiguador1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sistema masa-resorte-amortiguador 1</figcaption><p></p>
+</figure>
+</div>
+<p><span class="math inline">\(u(t)\)</span> es el desplazamiento del carro y por ende, la entrada al sistema. En <span class="math inline">\(t=0\)</span>, el carro se mueve a velocidad constante (es decir, <span class="math inline">\(u=constante\)</span>). El desplazamiento <span class="math inline">\(y(t)\)</span> de la masa es la salida del sistema y tome en cuenta que es con respecto al suelo. Además, considere que <span class="math inline">\(m\)</span> es la masa, <span class="math inline">\(b\)</span> es el coeficiente de fricción viscosa y <span class="math inline">\(k\)</span> es la constante del resorte. La fuerza de fricción del amortiguador es proporcional a <span class="math inline">\(y'-u'\)</span> y que el resorte es lineal, por lo que la fuerza del mismo es proporcional a <span class="math inline">\(y-u\)</span>.</p>
+<p>La segunda ley de Newton dice que:</p>
+<p><span class="math display">\[
+\Sigma{F}=ma
+\]</span></p>
+<p>Siendo <span class="math inline">\(a\)</span> la aceleración, por ende, la segunda derivada del desplazamiento.</p>
+</section>
+<section id="ejemplo-2" class="level5">
+<h5 class="anchored" data-anchor-id="ejemplo-2">Ejemplo 2</h5>
+<p>Obtener la función de transferencia del sistema mecánico:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/SistemaMasaResorteAmortiguador2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sistema masa-resorte-amortiguador 2</figcaption><p></p>
+</figure>
+</div>
 
 
+</section>
 </section>
 </section>
 </section>

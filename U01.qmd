@@ -371,6 +371,8 @@ print(ftfeedback)
 
 Para resortes en paralelo:
 
+![Resortes en paralelo](Media/ResortesParalelo.png){fig-align="center"}
+
 $$
 F=k_1x+k_2x
 $$
@@ -383,6 +385,64 @@ $$
 
 Para resortes conectados en serie, la fuerza es la misma:
 
+![Resortes en serie](Media/ResortesSerie.png){fig-align="center"}
+
 $$
 F=k_1y, \ F=k_2(x-y)
 $$
+
+#### Sistemas de amortiguadores
+
+En estos casos debe obtenerse el coeficiente de fricción viscosa.
+
+Para amortiguadores en paralelo, sabemos que:
+
+![Amortiguadores en paralelo](Media/AmortiguadorParalelo.png){fig-align="center"}
+
+$$
+F=b_1(y'-x')+b_2(y'-x')
+$$
+
+Esto nos da:
+
+$$
+F=(b_1+b_2)(y'-x')
+$$
+
+Por lo tanto
+
+$$
+b_{eq}=(b_1+b_2)
+$$
+
+Para amortiguadores en serie, se sabe que:
+
+![Amortiguadores en serie](Media/AmortiguadorSerie.png){fig-align="center"}
+
+$$
+F=b_1(z'-x')=b_2(y'-z')
+$$
+
+#### Sistemas masa-resorte-amortiguador
+
+##### Ejemplo 1
+
+Consideremos el ejercicio propuesto en el libro de Ogata. Ahí se tiene un sistema armado en un carro sin masa. Debemos obtener la función de transferencia del mismo, suponiendo que el carro está inmóvil para todo tiempo menor a cero junto con el sistema completo.
+
+![Sistema masa-resorte-amortiguador 1](Media/SistemaMasaResorteAmortiguador1.png){fig-align="center"}
+
+$u(t)$ es el desplazamiento del carro y por ende, la entrada al sistema. En $t=0$, el carro se mueve a velocidad constante (es decir, $u=constante$). El desplazamiento $y(t)$ de la masa es la salida del sistema y tome en cuenta que es con respecto al suelo. Además, considere que $m$ es la masa, $b$ es el coeficiente de fricción viscosa y $k$ es la constante del resorte. La fuerza de fricción del amortiguador es proporcional a $y'-u'$ y que el resorte es lineal, por lo que la fuerza del mismo es proporcional a $y-u$.
+
+La segunda ley de Newton dice que:
+
+$$
+\Sigma{F}=ma
+$$
+
+Siendo $a$ la aceleración, por ende, la segunda derivada del desplazamiento.
+
+##### Ejemplo 2
+
+Obtener la función de transferencia del sistema mecánico:
+
+![Sistema masa-resorte-amortiguador 2](Media/SistemaMasaResorteAmortiguador2.png){fig-align="center"}
