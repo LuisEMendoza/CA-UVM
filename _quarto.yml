@@ -11,4 +11,4 @@ website:
         file: index.html
       - talks.qmd
       - text: "About"
-        file about.qmd
+        file: about.qmd
