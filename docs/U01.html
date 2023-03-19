@@ -522,7 +522,28 @@ F=b_1(z'-x')=b_2(y'-z')
 <p><span class="math display">\[
 \Sigma{F}=ma
 \]</span></p>
-<p>Siendo <span class="math inline">\(a\)</span> la aceleración, por ende, la segunda derivada del desplazamiento.</p>
+<p>Siendo <span class="math inline">\(a\)</span> la aceleración, por ende, la segunda derivada del desplazamiento. Manejemos la sumatoria de fuerzas como sigue:</p>
+<p><span class="math display">\[
+my''=-b(y'-u')-k(y-u)
+\]</span></p>
+<p>La idea es separar las variables, dejando el lado izquierdo solo en términos de <span class="math inline">\(y\)</span>:</p>
+<p><span class="math display">\[
+my''=-by'+bu'-ky+ku
+\]</span></p>
+<p><span class="math display">\[
+my''+by'+ky=bu'+ku
+\]</span></p>
+<p>Acto seguido, aplicamos la transformada de Laplace a esta última expresión:</p>
+<p><span class="math display">\[
+L\{my''+by'+ky\}=L\{bu'+ku\}
+\]</span></p>
+<p><span class="math display">\[
+[ms^2+bs+k]Y(s)=[bs+k]U(s)
+\]</span></p>
+<p>Recordemos que la función de transferencia es la relación entre la señal de salida y la señal de entrada <span class="math inline">\(Y(s) / U(s)\)</span></p>
+<p><span class="math display">\[
+G(s)= \frac{Y(s)}{U(s)}=\frac{bs+k}{ms^2+bs+k}
+\]</span></p>
 </section>
 <section id="ejemplo-2" class="level5">
 <h5 class="anchored" data-anchor-id="ejemplo-2">Ejemplo 2</h5>

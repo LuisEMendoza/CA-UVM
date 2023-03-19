@@ -439,7 +439,37 @@ $$
 \Sigma{F}=ma
 $$
 
-Siendo $a$ la aceleración, por ende, la segunda derivada del desplazamiento.
+Siendo $a$ la aceleración, por ende, la segunda derivada del desplazamiento. Manejemos la sumatoria de fuerzas como sigue:
+
+$$
+my''=-b(y'-u')-k(y-u)
+$$
+
+La idea es separar las variables, dejando el lado izquierdo solo en términos de $y$:
+
+$$
+my''=-by'+bu'-ky+ku
+$$
+
+$$
+my''+by'+ky=bu'+ku
+$$
+
+Acto seguido, aplicamos la transformada de Laplace a esta última expresión:
+
+$$
+L\{my''+by'+ky\}=L\{bu'+ku\}
+$$
+
+$$
+[ms^2+bs+k]Y(s)=[bs+k]U(s)
+$$
+
+Recordemos que la función de transferencia es la relación entre la señal de salida y la señal de entrada $Y(s) / U(s)$
+
+$$
+G(s)= \frac{Y(s)}{U(s)}=\frac{bs+k}{ms^2+bs+k}
+$$
 
 ##### Ejemplo 2
 
