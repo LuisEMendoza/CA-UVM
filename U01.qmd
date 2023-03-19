@@ -146,12 +146,6 @@ $$
 G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
 $$
 
-![a) Sistema en cascada](Media/SistemaEnSerie.png){fig-align="center"}
-
-![b) Sistema en paralelo](Media/SistemaEnParalelo.png){fig-align="center"}
-
-![c) Sistema en lazo cerrado](Media/SistemaRealimentado.png){fig-align="center"}
-
 Veamos cómo obtener las funciones resultantes de estos arreglos mediante algunos lenguajes de programación.
 
 #### MATLAB {#matlab}
@@ -314,7 +308,7 @@ $$
 FT_{realimentado}=\frac{10s+50}{s^3+7s^2+20s+100}
 $$
 
-#### Python
+#### Python {#python}
 
 El trabajo con Python en cuanto a Control de Sistemas es posible, sin embargo requiere cierto tratamiento previo en cuanto a instalación de paquetes. Con el entorno ya instalado, obtenido de la fuente oficial, procedemos a agregar paquetes específicos. En este caso, serán dos:
 
@@ -365,9 +359,9 @@ ftfeedback = control.feedback(G1, G2)
 print(ftfeedback)
 ```
 
-### Modelado de sistemas mecánicos
+### Modelado de sistemas mecánicos {#modelado-de-sistemas-mecánicos}
 
-#### Resortes
+#### Resortes {#resortes}
 
 Para resortes en paralelo:
 
@@ -391,13 +385,11 @@ $$
 F=k_1y, \ F=k_2(x-y)
 $$
 
-#### Sistemas de amortiguadores
+#### Sistemas de amortiguadores {#sistemas-de-amortiguadores}
 
 En estos casos debe obtenerse el coeficiente de fricción viscosa.
 
 Para amortiguadores en paralelo, sabemos que:
-
-![Amortiguadores en paralelo](Media/AmortiguadorParalelo.png){fig-align="center"}
 
 $$
 F=b_1(y'-x')+b_2(y'-x')
@@ -415,21 +407,23 @@ $$
 b_{eq}=(b_1+b_2)
 $$
 
-Para amortiguadores en serie, se sabe que:
+![Amortiguadores en paralelo](Media/AmortiguadorParalelo.png){fig-align="center"}
 
-![Amortiguadores en serie](Media/AmortiguadorSerie.png){fig-align="center"}
+Para amortiguadores en serie, se sabe que:
 
 $$
 F=b_1(z'-x')=b_2(y'-z')
 $$
 
-#### Sistemas masa-resorte-amortiguador
+![Amortiguadores en serie](Media/AmortiguadorSerie.png){fig-align="center"}
 
-##### Ejemplo 1
+#### Sistemas masa-resorte-amortiguador {#sistemas-masa-resorte-amortiguador}
+
+##### Ejemplo 1 {#ejemplo-1}
 
 Consideremos el ejercicio propuesto en el libro de Ogata. Ahí se tiene un sistema armado en un carro sin masa. Debemos obtener la función de transferencia del mismo, suponiendo que el carro está inmóvil para todo tiempo menor a cero junto con el sistema completo.
 
-![Sistema masa-resorte-amortiguador 1](Media/SistemaMasaResorteAmortiguador1.png){fig-align="center"}
+![](Media/SistemaMasaResorteAmortiguador1.png){fig-align="center"}
 
 $u(t)$ es el desplazamiento del carro y por ende, la entrada al sistema. En $t=0$, el carro se mueve a velocidad constante (es decir, $u=constante$). El desplazamiento $y(t)$ de la masa es la salida del sistema y tome en cuenta que es con respecto al suelo. Además, considere que $m$ es la masa, $b$ es el coeficiente de fricción viscosa y $k$ es la constante del resorte. La fuerza de fricción del amortiguador es proporcional a $y'-u'$ y que el resorte es lineal, por lo que la fuerza del mismo es proporcional a $y-u$.
 
@@ -471,8 +465,8 @@ $$
 G(s)= \frac{Y(s)}{U(s)}=\frac{bs+k}{ms^2+bs+k}
 $$
 
-##### Ejemplo 2
+##### Ejemplo 2 {#ejemplo-2}
 
 Obtener la función de transferencia del sistema mecánico:
 
-![Sistema masa-resorte-amortiguador 2](Media/SistemaMasaResorteAmortiguador2.png){fig-align="center"}
+![](Media/SistemaMasaResorteAmortiguador2.png){fig-align="center"}

@@ -290,24 +290,6 @@ G_1(s)=\frac{num1}{den1}=\frac{10}{s^2+2s+10}
 <p><span class="math display">\[
 G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/SistemaEnSerie.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">a) Sistema en cascada</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/SistemaEnParalelo.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">b) Sistema en paralelo</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/SistemaRealimentado.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">c) Sistema en lazo cerrado</figcaption><p></p>
-</figure>
-</div>
 <p>Veamos cómo obtener las funciones resultantes de estos arreglos mediante algunos lenguajes de programación.</p>
 <section id="matlab" class="level4">
 <h4 class="anchored" data-anchor-id="matlab">MATLAB</h4>
@@ -478,12 +460,6 @@ F=k_1y, \ F=k_2(x-y)
 <h4 class="anchored" data-anchor-id="sistemas-de-amortiguadores">Sistemas de amortiguadores</h4>
 <p>En estos casos debe obtenerse el coeficiente de fricción viscosa.</p>
 <p>Para amortiguadores en paralelo, sabemos que:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/AmortiguadorParalelo.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Amortiguadores en paralelo</figcaption><p></p>
-</figure>
-</div>
 <p><span class="math display">\[
 F=b_1(y'-x')+b_2(y'-x')
 \]</span></p>
@@ -495,16 +471,22 @@ F=(b_1+b_2)(y'-x')
 <p><span class="math display">\[
 b_{eq}=(b_1+b_2)
 \]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/AmortiguadorParalelo.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Amortiguadores en paralelo</figcaption><p></p>
+</figure>
+</div>
 <p>Para amortiguadores en serie, se sabe que:</p>
+<p><span class="math display">\[
+F=b_1(z'-x')=b_2(y'-z')
+\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Media/AmortiguadorSerie.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Amortiguadores en serie</figcaption><p></p>
 </figure>
 </div>
-<p><span class="math display">\[
-F=b_1(z'-x')=b_2(y'-z')
-\]</span></p>
 </section>
 <section id="sistemas-masa-resorte-amortiguador" class="level4">
 <h4 class="anchored" data-anchor-id="sistemas-masa-resorte-amortiguador">Sistemas masa-resorte-amortiguador</h4>
@@ -514,7 +496,6 @@ F=b_1(z'-x')=b_2(y'-z')
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Media/SistemaMasaResorteAmortiguador1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Sistema masa-resorte-amortiguador 1</figcaption><p></p>
 </figure>
 </div>
 <p><span class="math inline">\(u(t)\)</span> es el desplazamiento del carro y por ende, la entrada al sistema. En <span class="math inline">\(t=0\)</span>, el carro se mueve a velocidad constante (es decir, <span class="math inline">\(u=constante\)</span>). El desplazamiento <span class="math inline">\(y(t)\)</span> de la masa es la salida del sistema y tome en cuenta que es con respecto al suelo. Además, considere que <span class="math inline">\(m\)</span> es la masa, <span class="math inline">\(b\)</span> es el coeficiente de fricción viscosa y <span class="math inline">\(k\)</span> es la constante del resorte. La fuerza de fricción del amortiguador es proporcional a <span class="math inline">\(y'-u'\)</span> y que el resorte es lineal, por lo que la fuerza del mismo es proporcional a <span class="math inline">\(y-u\)</span>.</p>
@@ -551,7 +532,6 @@ G(s)= \frac{Y(s)}{U(s)}=\frac{bs+k}{ms^2+bs+k}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="Media/SistemaMasaResorteAmortiguador2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Sistema masa-resorte-amortiguador 2</figcaption><p></p>
 </figure>
 </div>
 
