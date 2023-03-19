@@ -9,7 +9,7 @@ website:
     left:
       - text: "Inicio"
         file: index.html
-      - text: Unidad 1.html
+      - text: Unidad 1
         file: U01.html
       - text: "About"
         file: about.qmd
