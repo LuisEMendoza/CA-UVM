@@ -10,4 +10,5 @@ website:
       - text: "Home"
         file: index.html
       - talks.qmd
-      - about.qmd 
+      - text: About
+        file about.qmd
