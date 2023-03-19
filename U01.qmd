@@ -148,9 +148,9 @@ $$
 
 ![a) Sistema en serie](Media/SistemaEnSerie.png){fig-align="center"}
 
-![Sistema en paralelo](Media/SistemaEnParalelo.png){fig-align="center"}
+![b) Sistema en paralelo](Media/SistemaEnParalelo.png){fig-align="center"}
 
-![Sistema en lazo cerrado](Media/SistemaRealimentado.png){fig-align="center"}
+![c) Sistema en lazo cerrado](Media/SistemaRealimentado.png){fig-align="center"}
 
 Veamos cómo obtener las funciones resultantes de estos arreglos mediante algunos lenguajes de programación.
 
