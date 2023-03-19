@@ -7,7 +7,7 @@ website:
     background: primary
     search: true
     left:
-      - text: "Home"
+      - text: "Inicio"
         file: index.html
       - talks.qmd
       - text: "About"
