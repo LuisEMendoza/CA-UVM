@@ -8,8 +8,8 @@ website:
     search: true
     left:
       - text: "Inicio"
-        file: index.html
+        file: index.qmd
       - text: Unidad 1
-        file: U01.html
+        file: U01.qmd
       - text: "About"
         file: about.qmd
