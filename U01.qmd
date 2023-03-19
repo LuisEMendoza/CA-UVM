@@ -146,6 +146,12 @@ $$
 G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
 $$
 
+![a) Sistema en serie](Media/SistemaEnSerie.png){fig-align="center"}
+
+![Sistema en paralelo](Media/SistemaEnParalelo.png){fig-align="center"}
+
+![Sistema en lazo cerrado](Media/SistemaRealimentado.png){fig-align="center"}
+
 Veamos cómo obtener las funciones resultantes de estos arreglos mediante algunos lenguajes de programación.
 
 #### MATLAB {#matlab}
