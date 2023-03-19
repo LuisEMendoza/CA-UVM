@@ -8,6 +8,6 @@ website:
     search: true
     left:
       - text: "Home"
-        file: index.qmd
+        file: index.html
       - talks.qmd
       - about.qmd 
