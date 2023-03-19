@@ -7,3 +7,5 @@ editor: visual
 ![](Media/uvm_logo.webp){fig-align="center"}
 
 # Control Analógico
+
+Docente: Luis Enrique Mendoza Ruiz
