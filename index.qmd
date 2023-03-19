@@ -10,4 +10,4 @@ editor: visual
 
 Docente: Luis Enrique Mendoza Ruiz
 
-[Segundo Parcial.](U01.qmd "Contenido del Segundo Parcial")
+[Segundo Parcial](U01.qmd "Contenido del Segundo Parcial")
