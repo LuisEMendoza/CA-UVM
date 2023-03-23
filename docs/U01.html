@@ -294,24 +294,6 @@ G_1(s)=\frac{num1}{den1}=\frac{10}{s^2+2s+10}
 <p><span class="math display">\[
 G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/SistemaEnSerie.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">a) Sistema en serie</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/SistemaEnParalelo.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">b) Sistema en paralelo</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/SistemaRealimentado.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">c) Sistema en lazo cerrado</figcaption><p></p>
-</figure>
-</div>
 <p>Veamos cómo obtener las funciones resultantes de estos arreglos mediante algunos lenguajes de programación.</p>
 <section id="matlab" class="level4">
 <h4 class="anchored" data-anchor-id="matlab">MATLAB</h4>
@@ -454,12 +436,6 @@ s^3 + 7 s^2 + 20 s + 100
 <section id="resortes" class="level4">
 <h4 class="anchored" data-anchor-id="resortes">Resortes</h4>
 <p>Para resortes en paralelo:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/ResortesParalelo.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Resortes en paralelo</figcaption><p></p>
-</figure>
-</div>
 <p><span class="math display">\[
 F=k_1x+k_2x
 \]</span></p>
@@ -468,12 +444,6 @@ F=k_1x+k_2x
 k_{eq}=k_1+k_2
 \]</span></p>
 <p>Para resortes conectados en serie, la fuerza es la misma:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/ResortesSerie.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Resortes en serie</figcaption><p></p>
-</figure>
-</div>
 <p><span class="math display">\[
 F=k_1y, \ F=k_2(x-y)
 \]</span></p>
@@ -493,22 +463,10 @@ F=(b_1+b_2)(y'-x')
 <p><span class="math display">\[
 b_{eq}=(b_1+b_2)
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/AmortiguadorParalelo.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Amortiguadores en paralelo</figcaption><p></p>
-</figure>
-</div>
 <p>Para amortiguadores en serie, se sabe que:</p>
 <p><span class="math display">\[
 F=b_1(z'-x')=b_2(y'-z')
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/AmortiguadorSerie.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Amortiguadores en serie</figcaption><p></p>
-</figure>
-</div>
 </section>
 <section id="sistemas-masa-resorte-amortiguador" class="level4">
 <h4 class="anchored" data-anchor-id="sistemas-masa-resorte-amortiguador">Sistemas masa-resorte-amortiguador</h4>
@@ -556,6 +514,17 @@ G(s)= \frac{Y(s)}{U(s)}=\frac{bs+k}{ms^2+bs+k}
 <p><img src="Media/SistemaMasaResorteAmortiguador2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
+</section>
+<section id="ejemplo-3" class="level5">
+<h5 class="anchored" data-anchor-id="ejemplo-3">Ejemplo 3</h5>
+<p>Un péndulo invertido montado en un carro manejado por un motor se muestra a continuación. El objetivo es conservar una posición vertical. Sin embargo, el péndulo invertido es inestable ya que puede girar en cualquier momento y en cualquier dirección, a menos que se le aplique una fuerza de control adecuada.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/PenduloInvertido1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Péndulo invertido</figcaption><p></p>
+</figure>
+</div>
+<p>Consideremos al sistema en dos dimensiones con una fuerza de control <span class="math inline">\(u\)</span>. De momento suponga que el centro de gravedad de la barra se encuentra en su centro geométrico. ¿Cuál es el modelo matemático del sistema?</p>
 
 
 </section>
