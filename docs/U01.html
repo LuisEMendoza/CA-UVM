@@ -518,12 +518,6 @@ G(s)= \frac{Y(s)}{U(s)}=\frac{bs+k}{ms^2+bs+k}
 <section id="ejemplo-3" class="level5">
 <h5 class="anchored" data-anchor-id="ejemplo-3">Ejemplo 3</h5>
 <p>Un péndulo invertido montado en un carro manejado por un motor se muestra a continuación. El objetivo es conservar una posición vertical. Sin embargo, el péndulo invertido es inestable ya que puede girar en cualquier momento y en cualquier dirección, a menos que se le aplique una fuerza de control adecuada.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Media/PenduloInvertido1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Péndulo invertido</figcaption><p></p>
-</figure>
-</div>
 <p>Consideremos al sistema en dos dimensiones con una fuerza de control <span class="math inline">\(u\)</span>. De momento suponga que el centro de gravedad de la barra se encuentra en su centro geométrico. ¿Cuál es el modelo matemático del sistema?</p>
 <p><strong>Solución</strong>. Debemos asumir que <span class="math inline">\(\theta\)</span> es el ángulo que forma la barra con la vertical y que las coordenadas del centro de gravedad son:</p>
 <p><span class="math display">\[
@@ -555,7 +549,7 @@ H=-Mx''+u
 <h3 class="anchored" data-anchor-id="modelado-de-sistemas-de-fluido">Modelado de sistemas de fluido</h3>
 <p>Debemos enfatizar en la diferencia entre fluidos laminares y turbulentos, con base en el número de Reynolds. Valores menores a 2000 implican fluido laminar. Entre 3000 y 4000 es un fluido turbulento. Los sistemas con flujo laminar pueden modelarse con ecuaciones diferenciales lineales, mientras que en los sistemas con flujo turbulento es posible linealizar las ecuaciones diferenciales no lineales si la región de operación es limitada. Si se trabaja con los conceptos de resistencia y capacitancia para sistemas de fluidos, es más sencillo describir las características de estos.</p>
 <section id="resistencia-y-capacitancia" class="level4">
-<h4 class="anchored" data-anchor-id="resistencia-y-capacitancia">Resistencia y capacitancia</h4>
+<h4 class="anchored" data-anchor-id="resistencia-y-capacitancia">Resistencia de un tanque</h4>
 <p>Consideremos el flujo entre dos tanques a través de un tubo. La resistencia al flujo en este tubo es el cambio en la diferencia necesaria de nivel del líquido entre los tanques para producir un cambio de una unidad en el caudal.</p>
 <p><span class="math display">\[
 R=\frac{\text{cambio en la diferencia de nivel}\  (m)}{\text{cambio en la velocidad de flujo}\ (m^3/s)}
@@ -580,8 +574,38 @@ K=\text{coeficiente}, \ m^2/seg
 \]</span></p>
 <p>Para el flujo laminar, la resistencia se obtiene como:</p>
 <p><span class="math display">\[
-R_t=\frac{dH}{dQ}
+R_t=\frac{dH}{dQ}=\frac{H}{Q}
 \]</span></p>
+<p>Si por otro lado, el flujo es turbulento entonces el caudal se obtiene mediante:</p>
+<p><span class="math display">\[
+Q=K\sqrt{H}
+\]</span></p>
+<p>Cambiando las unidades del coeficiente <span class="math inline">\(K\)</span> a <span class="math inline">\(m^{2.5}\)</span> y calculando la resistencia como</p>
+<p><span class="math display">\[
+R_t=\frac{2H}{Q}
+\]</span></p>
+<p>Esta expresión es válida solo si los cambios en la altura y el caudal son pequeños.</p>
+</section>
+<section id="capacitancia-de-un-tanque" class="level4">
+<h4 class="anchored" data-anchor-id="capacitancia-de-un-tanque">Capacitancia de un tanque</h4>
+<p>Se define como el cambio necesario en la cantidad de líquido almacenado, para producir un cambio de una unidad en el potencial (altura).</p>
+<p><span class="math display">\[
+C=\frac{\text{cambio en el líquido almacenado},\ (m^3)}{\text{cambio en la altura},\ (m)}
+\]</span></p>
+</section>
+<section id="sistema-de-nivel-de-líquido" class="level4">
+<h4 class="anchored" data-anchor-id="sistema-de-nivel-de-líquido">Sistema de nivel de líquido</h4>
+<p>Considerando el sistema anterior, vuelto a colocar debajo, definamos las siguientes variables:</p>
+<p><span class="math inline">\(\bar{Q}=\)</span> caudal en estado estable, (<span class="math inline">\(m^3/seg\)</span>)</p>
+<p><span class="math inline">\(q_i=\)</span> desviación pequeña de la velocidad de entrada de su valor en estado estable, (<span class="math inline">\(m^3/seg\)</span>)</p>
+<p><span class="math inline">\(q_o=\)</span> desviación pequeña de la velocidad de salida de su valor en estado estable, (<span class="math inline">\(m^3/seg\)</span>)</p>
+<p><span class="math inline">\(\bar{H}=\)</span> altura en estado estable, (<span class="math inline">\(m\)</span>)</p>
+<p><span class="math inline">\(h=\)</span> desviación pequeña de la altura a partir de su valor en estado estable, (<span class="math inline">\(m\)</span>)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/SistemaNivelLiquido1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 
 
 </section>

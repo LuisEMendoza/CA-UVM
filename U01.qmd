@@ -463,11 +463,9 @@ Obtener la función de transferencia del sistema mecánico:
 
 ![](Media/SistemaMasaResorteAmortiguador2.png){fig-align="center"}
 
-##### Ejemplo 3
+##### Ejemplo 3 {#ejemplo-3}
 
 Un péndulo invertido montado en un carro manejado por un motor se muestra a continuación. El objetivo es conservar una posición vertical. Sin embargo, el péndulo invertido es inestable ya que puede girar en cualquier momento y en cualquier dirección, a menos que se le aplique una fuerza de control adecuada.
-
-![Péndulo invertido](Media/PenduloInvertido1.png){fig-align="center"}
 
 Consideremos al sistema en dos dimensiones con una fuerza de control $u$. De momento suponga que el centro de gravedad de la barra se encuentra en su centro geométrico. ¿Cuál es el modelo matemático del sistema?
 
@@ -505,11 +503,11 @@ $$
 H=-Mx''+u
 $$
 
-### Modelado de sistemas de fluido
+### Modelado de sistemas de fluido {#modelado-de-sistemas-de-fluido}
 
 Debemos enfatizar en la diferencia entre fluidos laminares y turbulentos, con base en el número de Reynolds. Valores menores a 2000 implican fluido laminar. Entre 3000 y 4000 es un fluido turbulento. Los sistemas con flujo laminar pueden modelarse con ecuaciones diferenciales lineales, mientras que en los sistemas con flujo turbulento es posible linealizar las ecuaciones diferenciales no lineales si la región de operación es limitada. Si se trabaja con los conceptos de resistencia y capacitancia para sistemas de fluidos, es más sencillo describir las características de estos.
 
-#### Resistencia y capacitancia
+#### Resistencia de un tanque {#resistencia-y-capacitancia}
 
 Consideremos el flujo entre dos tanques a través de un tubo. La resistencia al flujo en este tubo es el cambio en la diferencia necesaria de nivel del líquido entre los tanques para producir un cambio de una unidad en el caudal.
 
@@ -542,5 +540,43 @@ $$
 Para el flujo laminar, la resistencia se obtiene como:
 
 $$
-R_t=\frac{dH}{dQ}
+R_t=\frac{dH}{dQ}=\frac{H}{Q}
 $$
+
+Si por otro lado, el flujo es turbulento entonces el caudal se obtiene mediante:
+
+$$
+Q=K\sqrt{H}
+$$
+
+Cambiando las unidades del coeficiente $K$ a $m^{2.5}$ y calculando la resistencia como
+
+$$
+R_t=\frac{2H}{Q}
+$$
+
+Esta expresión es válida solo si los cambios en la altura y el caudal son pequeños.
+
+####  Capacitancia de un tanque
+
+Se define como el cambio necesario en la cantidad de líquido almacenado, para producir un cambio de una unidad en el potencial (altura).
+
+$$
+C=\frac{\text{cambio en el líquido almacenado},\ (m^3)}{\text{cambio en la altura},\ (m)}
+$$
+
+#### Sistema de nivel de líquido
+
+Considerando el sistema anterior, vuelto a colocar debajo, definamos las siguientes variables:
+
+$\bar{Q}=$ caudal en estado estable, ($m^3/seg$)
+
+$q_i=$ desviación pequeña de la velocidad de entrada de su valor en estado estable, ($m^3/seg$)
+
+$q_o=$ desviación pequeña de la velocidad de salida de su valor en estado estable, ($m^3/seg$)
+
+$\bar{H}=$ altura en estado estable, ($m$)
+
+$h=$ desviación pequeña de la altura a partir de su valor en estado estable, ($m$)
+
+![](Media/SistemaNivelLiquido1.png){fig-align="center"}
