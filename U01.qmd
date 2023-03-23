@@ -146,6 +146,12 @@ $$
 G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
 $$
 
+![a) Sistema en serie](Media/SistemaEnSerie.png){fig-align="center"}
+
+![b) Sistema en paralelo](Media/SistemaEnParalelo.png){fig-align="center"}
+
+![c) Sistema realimentado](Media/SistemaRealimentado.png){fig-align="center"}
+
 Veamos cómo obtener las funciones resultantes de estos arreglos mediante algunos lenguajes de programación.
 
 #### MATLAB {#matlab}
@@ -467,6 +473,8 @@ Obtener la función de transferencia del sistema mecánico:
 
 Un péndulo invertido montado en un carro manejado por un motor se muestra a continuación. El objetivo es conservar una posición vertical. Sin embargo, el péndulo invertido es inestable ya que puede girar en cualquier momento y en cualquier dirección, a menos que se le aplique una fuerza de control adecuada.
 
+![](Media/PenduloInvertido1.png){fig-align="center"}
+
 Consideremos al sistema en dos dimensiones con una fuerza de control $u$. De momento suponga que el centro de gravedad de la barra se encuentra en su centro geométrico. ¿Cuál es el modelo matemático del sistema?
 
 **Solución**. Debemos asumir que $\theta$ es el ángulo que forma la barra con la vertical y que las coordenadas del centro de gravedad son:
@@ -580,3 +588,11 @@ $\bar{H}=$ altura en estado estable, ($m$)
 $h=$ desviación pequeña de la altura a partir de su valor en estado estable, ($m$)
 
 ![](Media/SistemaNivelLiquido1.png){fig-align="center"}
+
+La ecuación diferencial para este sistema queda como
+
+$$
+RC\frac{dh}{dt}+h=Rq_i
+$$
+
+Siendo $RC$ la constante de tiempo del sistema
