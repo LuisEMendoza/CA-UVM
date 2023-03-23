@@ -470,3 +470,37 @@ Un péndulo invertido montado en un carro manejado por un motor se muestra a con
 ![Péndulo invertido](Media/PenduloInvertido1.png){fig-align="center"}
 
 Consideremos al sistema en dos dimensiones con una fuerza de control $u$. De momento suponga que el centro de gravedad de la barra se encuentra en su centro geométrico. ¿Cuál es el modelo matemático del sistema?
+
+**Solución**. Debemos asumir que $\theta$ es el ángulo que forma la barra con la vertical y que las coordenadas del centro de gravedad son:
+
+$$
+x_G=x+l\ sen \ \theta
+$$
+
+$$
+y_G=l\ cos\ \theta
+$$
+
+El movimiento rotacional de la barra del péndulo alrededor del centro de gravedad queda como:
+
+$$
+I\theta''=Vl\ sen\ \theta - Hl\ cos\ \theta
+$$
+
+El movimiento horizontal del centro de gravedad se define como:
+
+$$
+H=m(x+l\ sen\ \theta)''
+$$
+
+El movimiento vertical queda como:
+
+$$
+V=m(l\ cos\ \theta)'' + mg
+$$
+
+Podemos definir también el movimiento horizontal del carro como:
+
+$$
+H=-Mx''+u
+$$
