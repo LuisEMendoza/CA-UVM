@@ -146,12 +146,6 @@ $$
 G_2(s)=\frac{num2}{den2}=\frac{5}{s+5}
 $$
 
-![a) Sistema en serie](Media/SistemaEnSerie.png){fig-align="center"}
-
-![b) Sistema en paralelo](Media/SistemaEnParalelo.png){fig-align="center"}
-
-![c) Sistema en lazo cerrado](Media/SistemaRealimentado.png){fig-align="center"}
-
 Veamos cómo obtener las funciones resultantes de estos arreglos mediante algunos lenguajes de programación.
 
 #### MATLAB {#matlab}
@@ -371,8 +365,6 @@ print(ftfeedback)
 
 Para resortes en paralelo:
 
-![Resortes en paralelo](Media/ResortesParalelo.png){fig-align="center"}
-
 $$
 F=k_1x+k_2x
 $$
@@ -384,8 +376,6 @@ k_{eq}=k_1+k_2
 $$
 
 Para resortes conectados en serie, la fuerza es la misma:
-
-![Resortes en serie](Media/ResortesSerie.png){fig-align="center"}
 
 $$
 F=k_1y, \ F=k_2(x-y)
@@ -413,15 +403,11 @@ $$
 b_{eq}=(b_1+b_2)
 $$
 
-![Amortiguadores en paralelo](Media/AmortiguadorParalelo.png){fig-align="center"}
-
 Para amortiguadores en serie, se sabe que:
 
 $$
 F=b_1(z'-x')=b_2(y'-z')
 $$
-
-![Amortiguadores en serie](Media/AmortiguadorSerie.png){fig-align="center"}
 
 #### Sistemas masa-resorte-amortiguador {#sistemas-masa-resorte-amortiguador}
 
@@ -476,3 +462,11 @@ $$
 Obtener la función de transferencia del sistema mecánico:
 
 ![](Media/SistemaMasaResorteAmortiguador2.png){fig-align="center"}
+
+##### Ejemplo 3
+
+Un péndulo invertido montado en un carro manejado por un motor se muestra a continuación. El objetivo es conservar una posición vertical. Sin embargo, el péndulo invertido es inestable ya que puede girar en cualquier momento y en cualquier dirección, a menos que se le aplique una fuerza de control adecuada.
+
+![Péndulo invertido](Media/PenduloInvertido1.png){fig-align="center"}
+
+Consideremos al sistema en dos dimensiones con una fuerza de control $u$. De momento suponga que el centro de gravedad de la barra se encuentra en su centro geométrico. ¿Cuál es el modelo matemático del sistema?
