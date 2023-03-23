@@ -538,3 +538,9 @@ $$
 $$
 K=\text{coeficiente}, \ m^2/seg
 $$
+
+Para el flujo laminar, la resistencia se obtiene como:
+
+$$
+R_t=\frac{dH}{dQ}
+$$
