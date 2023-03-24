@@ -573,7 +573,7 @@ $$
 C=\frac{\text{cambio en el líquido almacenado},\ (m^3)}{\text{cambio en la altura},\ (m)}
 $$
 
-#### Sistema de nivel de líquido
+#### Ejemplo 1
 
 Considerando el sistema anterior, vuelto a colocar debajo, definamos las siguientes variables:
 
@@ -595,4 +595,28 @@ $$
 RC\frac{dh}{dt}+h=Rq_i
 $$
 
-Siendo $RC$ la constante de tiempo del sistema
+Siendo $RC$ la constante de tiempo del sistema. Aplicando Laplace con las condiciones iniciales en cero, tenemos que
+
+$$
+[RCs+1]H(s)=RQ_i(s)
+$$
+
+Si consideramos que $q_i$ es la entrada y $h$ es la salida, entonces la función de transferencia del sistema es
+
+$$
+\frac{H(s)}{Q_i(s)}=\frac{R}{RCs+1}
+$$
+
+Por otro lado, si cambiamos la salida a $q_o$, la función de transferencia queda como
+
+$$
+\frac{Q_o(s)}{Q_i(s)}=\frac{1}{RCs+1}
+$$
+
+#### Ejemplo 2
+
+Consideremos el sistema donde interactúan dos tanques.
+
+![](Media/SistemaNivelLiquido2.png){fig-align="center"}
+
+Formulemos las ecuaciones que representen el estado de los mismos.

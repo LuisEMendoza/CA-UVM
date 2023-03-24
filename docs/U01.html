@@ -616,8 +616,8 @@ R_t=\frac{2H}{Q}
 C=\frac{\text{cambio en el líquido almacenado},\ (m^3)}{\text{cambio en la altura},\ (m)}
 \]</span></p>
 </section>
-<section id="sistema-de-nivel-de-líquido" class="level4">
-<h4 class="anchored" data-anchor-id="sistema-de-nivel-de-líquido">Sistema de nivel de líquido</h4>
+<section id="ejemplo-1-1" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo-1-1">Ejemplo 1</h4>
 <p>Considerando el sistema anterior, vuelto a colocar debajo, definamos las siguientes variables:</p>
 <p><span class="math inline">\(\bar{Q}=\)</span> caudal en estado estable, (<span class="math inline">\(m^3/seg\)</span>)</p>
 <p><span class="math inline">\(q_i=\)</span> desviación pequeña de la velocidad de entrada de su valor en estado estable, (<span class="math inline">\(m^3/seg\)</span>)</p>
@@ -633,7 +633,28 @@ C=\frac{\text{cambio en el líquido almacenado},\ (m^3)}{\text{cambio en la altu
 <p><span class="math display">\[
 RC\frac{dh}{dt}+h=Rq_i
 \]</span></p>
-<p>Siendo <span class="math inline">\(RC\)</span> la constante de tiempo del sistema</p>
+<p>Siendo <span class="math inline">\(RC\)</span> la constante de tiempo del sistema. Aplicando Laplace con las condiciones iniciales en cero, tenemos que</p>
+<p><span class="math display">\[
+[RCs+1]H(s)=RQ_i(s)
+\]</span></p>
+<p>Si consideramos que <span class="math inline">\(q_i\)</span> es la entrada y <span class="math inline">\(h\)</span> es la salida, entonces la función de transferencia del sistema es</p>
+<p><span class="math display">\[
+\frac{H(s)}{Q_i(s)}=\frac{R}{RCs+1}
+\]</span></p>
+<p>Por otro lado, si cambiamos la salida a <span class="math inline">\(q_o\)</span>, la función de transferencia queda como</p>
+<p><span class="math display">\[
+\frac{Q_o(s)}{Q_i(s)}=\frac{1}{RCs+1}
+\]</span></p>
+</section>
+<section id="ejemplo-2-1" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo-2-1">Ejemplo 2</h4>
+<p>Consideremos el sistema donde interactúan dos tanques.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Media/SistemaNivelLiquido2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Formulemos las ecuaciones que representen el estado de los mismos.</p>
 
 
 </section>
